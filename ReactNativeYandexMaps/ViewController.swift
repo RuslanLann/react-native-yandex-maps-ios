@@ -2,7 +2,7 @@ import UIKit
 import Foundation
 import YandexMapKit
 
-class MapViewController: UIViewController {
+class ViewController: UIViewController {
     @IBOutlet weak var mapView: YMKMapView!
     
     let TARGET_LOCATION = YMKPoint(latitude: 59.945933, longitude: 30.320045)
