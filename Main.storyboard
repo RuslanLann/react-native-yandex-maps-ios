@@ -11,20 +11,23 @@
         <!--View Controller-->
         <scene sceneID="tgk-h1-mHF">
             <objects>
-                <viewController modalPresentationStyle="fullScreen" id="r4b-7h-VGl" sceneMemberID="viewController">
+                <viewController modalPresentationStyle="fullScreen" id="r4b-7h-VGl" customClass="ViewController" customModule="ReactNativeYandexMaps" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="LCa-3s-ta7">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="0YN-zy-ijn" customClass="YMKMapView">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                                <autoresizingMask key="autoresizingMask"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                             </view>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="oLw-Jl-McM"/>
                     </view>
+                    <connections>
+                        <outlet property="mapView" destination="0YN-zy-ijn" id="VZw-7F-KQd"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Rpi-Jw-yCm" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
