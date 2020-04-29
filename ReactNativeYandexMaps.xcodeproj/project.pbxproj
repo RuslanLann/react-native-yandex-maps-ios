@@ -14,6 +14,7 @@
 		E17015AD245724ED0063EE82 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E17015AC245724ED0063EE82 /* Assets.xcassets */; };
 		E17015B0245724ED0063EE82 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E17015AE245724ED0063EE82 /* LaunchScreen.storyboard */; };
 		E17015BB24572E220063EE82 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E17015BA24572DDC0063EE82 /* Main.storyboard */; };
+		E1DF897F24596A570011EB8E /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E1DF897E24596A570011EB8E /* Colors.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		E17015AF245724ED0063EE82 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E17015B1245724EE0063EE82 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E17015BA24572DDC0063EE82 /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Main.storyboard; path = ../Main.storyboard; sourceTree = "<group>"; };
+		E1DF897E24596A570011EB8E /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,6 +87,7 @@
 				E17015BA24572DDC0063EE82 /* Main.storyboard */,
 				E17015A7245724ED0063EE82 /* ViewController.swift */,
 				E17015AC245724ED0063EE82 /* Assets.xcassets */,
+				E1DF897E24596A570011EB8E /* Colors.xcassets */,
 				E17015AE245724ED0063EE82 /* LaunchScreen.storyboard */,
 				E17015B1245724EE0063EE82 /* Info.plist */,
 			);
@@ -152,6 +155,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E17015BB24572E220063EE82 /* Main.storyboard in Resources */,
+				E1DF897F24596A570011EB8E /* Colors.xcassets in Resources */,
 				E17015B0245724ED0063EE82 /* LaunchScreen.storyboard in Resources */,
 				E17015AD245724ED0063EE82 /* Assets.xcassets in Resources */,
 			);
