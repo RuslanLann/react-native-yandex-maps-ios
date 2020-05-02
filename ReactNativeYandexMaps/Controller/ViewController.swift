@@ -2,7 +2,7 @@ import UIKit
 import YandexMapKit
 
 class ViewController: UIViewController {
-    @IBOutlet public weak var mapView: YMKMapView!
+    @IBOutlet weak var mapView: YMKMapView!
     
     let RESTAURANT_LOCATION = YMKPoint(latitude: 55.676265, longitude: 37.519503)
     let ORDER_LOCATION = YMKPoint(latitude: 55.681648, longitude: 37.516156)
@@ -16,6 +16,13 @@ class ViewController: UIViewController {
            "fill": UIColor(named: "TransparentGreen")!
         ]
     ]
+    let MARKERS_ARRAY = [
+        ["lat": 55.676265, "lon": 37.519503, "color": "red"],
+        ["lat": 55.681648, "lon": 37.516156, "color": "green"],
+        ["lat": 55.679270, "lon": 37.516027, "color": "green"],
+        ["lat": 55.677204, "lon": 37.528154, "color": "green"],
+        ["lat": 55.676998, "lon": 37.523178, "color": "green"]
+    ]
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,20 +32,26 @@ class ViewController: UIViewController {
             animationType: YMKAnimation(type: YMKAnimationType.smooth, duration: 0.4),
             cameraCallback: nil
         )
-        createMapObjects()
+        
+        for point in MARKERS_ARRAY {
+            createMapMarkerWithCircle(
+                lat: point["lat"] as! Double,
+                lon: point["lon"] as! Double,
+                color: point["color"] as! String
+            )
+        }
     }
     
-    func createMapMarkerWithCircle (color: String) {
+    func createMapMarkerWithCircle (lat: Double, lon: Double, color: String) {
         let mapObjects = mapView.mapWindow.map.mapObjects
-        
-        var location = RESTAURANT_LOCATION
+
+        let location = YMKPoint(latitude: lat, longitude: lon)
         var iconName = "RedPin"
-        
+
         if (color == "green") {
-            location = ORDER_LOCATION
             iconName = "GreenPin"
         }
-        
+
         let placemark = mapObjects.addPlacemark(with: location)
         placemark.opacity = 1
         placemark.setIconWith(UIImage(named: iconName)!, style: YMKIconStyle(
@@ -58,10 +71,5 @@ class ViewController: UIViewController {
            fill: COLOR_OBJECTS[color]!["fill"]!
         )
         circle.zIndex = 100
-    }
-    
-    func createMapObjects() {
-        createMapMarkerWithCircle(color: "red")
-        createMapMarkerWithCircle(color: "green")
     }
 }
