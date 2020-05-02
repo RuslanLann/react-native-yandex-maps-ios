@@ -15,6 +15,9 @@
 		E17015B0245724ED0063EE82 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E17015AE245724ED0063EE82 /* LaunchScreen.storyboard */; };
 		E17015BB24572E220063EE82 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E17015BA24572DDC0063EE82 /* Main.storyboard */; };
 		E1DF897F24596A570011EB8E /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E1DF897E24596A570011EB8E /* Colors.xcassets */; };
+		E1DF898224597A5C0011EB8E /* Marker.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1DF898124597A5B0011EB8E /* Marker.swift */; };
+		E1DF898424597A760011EB8E /* Circle.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1DF898324597A760011EB8E /* Circle.swift */; };
+		E1DF89862459B75A0011EB8E /* UserLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1DF89852459B75A0011EB8E /* UserLocation.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +33,9 @@
 		E17015B1245724EE0063EE82 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E17015BA24572DDC0063EE82 /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Main.storyboard; path = ../Main.storyboard; sourceTree = "<group>"; };
 		E1DF897E24596A570011EB8E /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
+		E1DF898124597A5B0011EB8E /* Marker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Marker.swift; sourceTree = "<group>"; };
+		E1DF898324597A760011EB8E /* Circle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Circle.swift; sourceTree = "<group>"; };
+		E1DF89852459B75A0011EB8E /* UserLocation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserLocation.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,6 +88,7 @@
 		E17015A2245724ED0063EE82 /* ReactNativeYandexMaps */ = {
 			isa = PBXGroup;
 			children = (
+				E1DF898024597A120011EB8E /* Components */,
 				E17015A3245724ED0063EE82 /* AppDelegate.swift */,
 				E17015A5245724ED0063EE82 /* SceneDelegate.swift */,
 				E17015BA24572DDC0063EE82 /* Main.storyboard */,
@@ -92,6 +99,16 @@
 				E17015B1245724EE0063EE82 /* Info.plist */,
 			);
 			path = ReactNativeYandexMaps;
+			sourceTree = "<group>";
+		};
+		E1DF898024597A120011EB8E /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				E1DF898124597A5B0011EB8E /* Marker.swift */,
+				E1DF898324597A760011EB8E /* Circle.swift */,
+				E1DF89852459B75A0011EB8E /* UserLocation.swift */,
+			);
+			path = Components;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -210,7 +227,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E1DF898224597A5C0011EB8E /* Marker.swift in Sources */,
+				E1DF89862459B75A0011EB8E /* UserLocation.swift in Sources */,
 				E17015A8245724ED0063EE82 /* ViewController.swift in Sources */,
+				E1DF898424597A760011EB8E /* Circle.swift in Sources */,
 				E17015A4245724ED0063EE82 /* AppDelegate.swift in Sources */,
 				E17015A6245724ED0063EE82 /* SceneDelegate.swift in Sources */,
 			);

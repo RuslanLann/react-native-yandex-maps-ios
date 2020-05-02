@@ -1,9 +1,8 @@
 import UIKit
-import Foundation
 import YandexMapKit
 
 class ViewController: UIViewController {
-    @IBOutlet weak var mapView: YMKMapView!
+    @IBOutlet public weak var mapView: YMKMapView!
     
     let RESTAURANT_LOCATION = YMKPoint(latitude: 55.676265, longitude: 37.519503)
     let ORDER_LOCATION = YMKPoint(latitude: 55.681648, longitude: 37.516156)
@@ -55,7 +54,7 @@ class ViewController: UIViewController {
         let circle = mapObjects.addCircle(
            with: YMKCircle(center: location, radius: 100),
            stroke: COLOR_OBJECTS[color]!["stroke"]!,
-           strokeWidth: 2,
+           strokeWidth: 1.1,
            fill: COLOR_OBJECTS[color]!["fill"]!
         )
         circle.zIndex = 100
