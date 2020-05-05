@@ -1,7 +1,8 @@
 import UIKit
 import YandexMapKit
 
-class ViewController: UIViewController, YMKMapObjectTapListener {
+class ViewController: UIViewController, YMKMapObjectTapListener, YMKUserLocationObjectListener {
+    
     @IBOutlet weak var mapView: YMKMapView!
     
     let RESTAURANT_LOCATION = YMKPoint(latitude: 55.676265, longitude: 37.519503)
@@ -28,6 +29,12 @@ class ViewController: UIViewController, YMKMapObjectTapListener {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        let mapKit = YMKMapKit.sharedInstance()
+        let userLocationLayer = mapKit.createUserLocationLayer(with: mapView.mapWindow)
+        
+        userLocationLayer.setVisibleWithOn(true)
+        userLocationLayer.setObjectListenerWith(self)
         
         mapView.mapWindow.map.move(
             with: YMKCameraPosition(target: RESTAURANT_LOCATION, zoom: 15, azimuth: 0, tilt: 0),
@@ -62,7 +69,7 @@ class ViewController: UIViewController, YMKMapObjectTapListener {
             zIndex: 0,
             flat: false,
             visible: true,
-            scale: 0.8,
+            scale: 0.7,
             tappableArea: YMKRect(min: CGPoint(x: 0, y: 0), max: CGPoint(x: 1, y: 1))
         ))
         placemark.addTapListener(with: self)
@@ -80,7 +87,7 @@ class ViewController: UIViewController, YMKMapObjectTapListener {
         guard let placemark = mapObject as? YMKPlacemarkMapObject else { return false }
         
         let iconStyle: YMKIconStyle = YMKIconStyle()
-        iconStyle.scale = 2
+        iconStyle.scale = 1
         iconStyle.anchor = CGPoint(x: 0.5, y: 1) as NSValue
         
         placemark.setIconStyleWith(iconStyle)
@@ -95,5 +102,34 @@ class ViewController: UIViewController, YMKMapObjectTapListener {
             cameraCallback: nil
         )
         return true
+    }
+    
+    func onObjectAdded(with view: YMKUserLocationView) {
+        view.arrow.setIconWith(UIImage(named:"UserIcon")!)
+        
+        let pinPlacemark = view.pin.useCompositeIcon()
+        
+        pinPlacemark.setIconWithName(
+            "UserIcon",
+            image: UIImage(named:"UserIcon")!,
+            style:YMKIconStyle(
+                anchor: CGPoint(x: 0.5, y: 0.5) as NSValue,
+                rotationType:YMKRotationType.rotate.rawValue as NSNumber,
+                zIndex: 0,
+                flat: true,
+                visible: true,
+                scale: 0.2,
+                tappableArea: nil)
+        )
+        
+        view.accuracyCircle.fillColor = UIColor(named: "TransparentRed")!
+    }
+    
+    func onObjectRemoved(with view: YMKUserLocationView) {
+        
+    }
+    
+    func onObjectUpdated(with view: YMKUserLocationView, event: YMKObjectEvent) {
+        
     }
 }
